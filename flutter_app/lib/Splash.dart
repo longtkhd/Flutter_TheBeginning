@@ -84,11 +84,11 @@ class Splash extends StatelessWidget {
                                       width: width / 3 - 10,
                                       height: 70,
                                       child: Center(
-                                          child: Image.asset(
-                                        "assets/images/src_assets_image_menu.png",
-                                        color: Colors.red,
-                                        height: 40,
-                                      )),
+                                        child: Text(
+                                          'Rate',
+                                          style: TextStyle(fontSize: 30.0,color: Colors.red),
+                                        ),
+                                      ),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
                                         color: Colors.white,
