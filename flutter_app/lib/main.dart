@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/splash.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,15 +21,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        body: Stack(
-          children :<Widget>[
-           Container(width: double.infinity,height: double.infinity,
-           color: Color.fromRGBO(44, 62, 80, 1),
-           )
-          ],
-        )
-      ),
+      home: Splash()
     );
   }
 }
