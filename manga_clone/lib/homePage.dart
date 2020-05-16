@@ -1,16 +1,14 @@
-import 'package:callpaperclone/screens/Catgory.dart';
-import 'package:callpaperclone/screens/Home_page.dart';
-import 'package:flutter/material.dart';
 import 'package:expanding_bottom_bar/expanding_bottom_bar.dart';
+import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
+class HomePage extends StatefulWidget {
+  HomePage({Key key}) : super(key: key);
+
   @override
-  _HomeState createState() => _HomeState();
+  _HomePageState createState() => _HomePageState();
 }
 
-const PrimaryColor = const Color(0xFF151026);
-
-class _HomeState extends State<Home> {
+class _HomePageState extends State<HomePage> {
   var demoIndex = 0;
   PageController pageController = PageController();
   @override
@@ -20,38 +18,25 @@ class _HomeState extends State<Home> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-
-        centerTitle: true,
-        elevation: 5, //shadow
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(4.0),
-              child: Image.asset(
-                "assets/images/logo.png",
-                height: 40,
-              ),
-            ),
-            Text(
-              'Wallpaper',
-              style: TextStyle(
-                color: Colors.black87,
-              ),
-            )
-          ],
-        ),
+          actions: [
+           Icon(Icons.add)
+      ],
+        
+        centerTitle: true ,
+        title: Text("Manga"),
+        leading:  IconButton(
+          icon:  Icon(Icons.public,color: Colors.white,),
+          onPressed: () {},
+      ),
+      
+      
       ),
       body: Container(
         child: PageView(
-            // physics: BouncingScrollPhysics(),
-            physics: BouncingScrollPhysics(),
-            controller: pageController, 
-             onPageChanged: onPageChanged,
-            children: <Widget>[HomePage(), Category()]),
+           physics: BouncingScrollPhysics(),
+        ),
       ),
       bottomNavigationBar: ExpandingBottomBar(
         navBarHeight: 90.0,
@@ -87,12 +72,7 @@ class _HomeState extends State<Home> {
         // },
         
       ),
-
-
-      //
     );
-
-    
   }
    void onPageChanged(int value) {
     setState(() {
@@ -103,9 +83,5 @@ class _HomeState extends State<Home> {
     pageController.animateToPage(value,
         duration: const Duration(milliseconds: 300), curve: Curves.ease);
   }
+
 }
-
-
-
-
-
