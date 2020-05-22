@@ -1,5 +1,7 @@
 import 'package:expanding_bottom_bar/expanding_bottom_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:mangaclone/MainPage.dart';
+import 'package:mangaclone/Setting.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -9,8 +11,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var demoIndex = 0;
+  var pageIndex = 0;
   PageController pageController = PageController();
+  
   @override
   void dispose() {
     pageController.dispose();
@@ -36,6 +39,13 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         child: PageView(
            physics: BouncingScrollPhysics(),
+           onPageChanged: onPageChanged,
+           controller: pageController,
+           children: <Widget>[
+             MainPage(),
+             Setting()
+
+           ],
         ),
       ),
       bottomNavigationBar: ExpandingBottomBar(
@@ -51,11 +61,11 @@ class _HomePageState extends State<HomePage> {
             text: "Categories",
             selectedColor: Colors.pink,
           ),
-          ExpandingBottomBarItem(
-            icon: Icons.search,
-            text: "Search",
-            selectedColor: Colors.amber,
-          ),
+          // ExpandingBottomBarItem(
+          //   icon: Icons.search,
+          //   text: "Search",
+          //   selectedColor: Colors.amber,
+          // ),
           ExpandingBottomBarItem(
             icon: Icons.settings,
             text: "Settings",
@@ -63,8 +73,9 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
         
-        selectedIndex: demoIndex,
-         onIndexChanged: navigationTapped,
+       
+          selectedIndex: pageIndex,
+              onIndexChanged: navigationTapped,
         // onIndexChanged: (demo) {
         //   setState(() {
         //     demoIndex = demo;
@@ -74,14 +85,14 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-   void onPageChanged(int value) {
+  void onPageChanged(int value) {
     setState(() {
-      demoIndex = value;
+      pageIndex = value;
     });
   }
+
   void navigationTapped(int value) {
     pageController.animateToPage(value,
         duration: const Duration(milliseconds: 300), curve: Curves.ease);
   }
-
 }
