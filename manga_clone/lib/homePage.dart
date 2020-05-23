@@ -1,5 +1,6 @@
 import 'package:expanding_bottom_bar/expanding_bottom_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:mangaclone/Category.dart';
 import 'package:mangaclone/MainPage.dart';
 import 'package:mangaclone/Setting.dart';
 
@@ -24,8 +25,11 @@ class _HomePageState extends State<HomePage> {
     return  Scaffold(
       appBar: AppBar(
           actions: [
-           Icon(Icons.add)
+           Icon(Icons.search)
       ],
+      backgroundColor: Color(0xffE74C3C),
+      
+      
         
         centerTitle: true ,
         title: Text("Manga"),
@@ -43,6 +47,7 @@ class _HomePageState extends State<HomePage> {
            controller: pageController,
            children: <Widget>[
              MainPage(),
+             Category(),
              Setting()
 
            ],
@@ -57,7 +62,7 @@ class _HomePageState extends State<HomePage> {
             selectedColor: Colors.purple,
           ),
           ExpandingBottomBarItem(
-            icon: Icons.category,
+            icon: Icons.layers,
             text: "Categories",
             selectedColor: Colors.pink,
           ),
@@ -67,8 +72,8 @@ class _HomePageState extends State<HomePage> {
           //   selectedColor: Colors.amber,
           // ),
           ExpandingBottomBarItem(
-            icon: Icons.settings,
-            text: "Settings",
+            icon: Icons.explore,
+            text: "More",
             selectedColor: Colors.teal,
           ),
         ],
