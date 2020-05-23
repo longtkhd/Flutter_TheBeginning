@@ -1,6 +1,7 @@
 import 'package:expanding_bottom_bar/expanding_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:mangaclone/Category.dart';
+import 'package:mangaclone/DrawerScreen.dart';
 import 'package:mangaclone/MainPage.dart';
 import 'package:mangaclone/Setting.dart';
 
@@ -35,11 +36,17 @@ class _HomePageState extends State<HomePage> {
         title: Text("Manga"),
         leading:  IconButton(
           icon:  Icon(Icons.public,color: Colors.white,),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => DrawerScreen()),
+  );
+          },
       ),
       
       
       ),
+      drawer: DrawerScreen(), //DRAWER SCREEN ======================================
       body: Container(
         child: PageView(
            physics: BouncingScrollPhysics(),

@@ -60,6 +60,7 @@ class _SettingState extends State<Setting> {
                     height: 1,
                     color: Colors.redAccent,
                   ),
+                  
                   GestureDetector(
                     onTap: () {
                       // Navigator.push(
@@ -132,53 +133,49 @@ class _SettingState extends State<Setting> {
               ),
             ),
           ),
-        )
-        ,Card(
-           margin: EdgeInsets.only(top: 30),
-           elevation: 5,
-           child: ClipRRect(
-             borderRadius: BorderRadius.circular(5),
-             child: Container(
-               height: 60,
-                width: width - 40,
-                color: Colors.white,
-                child: Column(
-                   mainAxisAlignment: MainAxisAlignment.center,
-                   children: <Widget>[
-                     GestureDetector(
-                       onTap: () {
-
-                       },
-                       child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Padding( padding: const EdgeInsets.only(right: 20, left: 10, top: 10, bottom: 10),
-                            child: Icon(Icons.comment,
-                            size: 30,
-                            color:Colors.redAccent
-
-                            ),
-                            ),
-                            Expanded(
-                            child: Text(
-                              "Feedback",
-                              style: TextStyle(fontSize: 16, color: Color(0xffE74C3C)),
-                            ),
+        ),
+        Card(
+          margin: EdgeInsets.only(top: 30),
+          elevation: 5,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(5),
+            child: Container(
+              height: 60,
+              width: width - 40,
+              color: Colors.white,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  GestureDetector(
+                    onTap: () {},
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              right: 20, left: 10, top: 10, bottom: 10),
+                          child: Icon(Icons.comment,
+                              size: 30, color: Colors.redAccent),
+                        ),
+                        Expanded(
+                          child: Text(
+                            "Feedback",
+                            style: TextStyle(
+                                fontSize: 16, color: Color(0xffE74C3C)),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 10),
-                            child: Icon(Icons.navigate_next, color: Colors.black38),
-                          )
-                          ],
-                       ),
-                       
-
-                     )
-                   ],
-                ),
-             ),
-           ),
-
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 10),
+                          child:
+                              Icon(Icons.navigate_next, color: Colors.black38),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
         )
       ]),
     );
