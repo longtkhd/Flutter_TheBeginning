@@ -61,11 +61,13 @@ class MainPage extends StatelessWidget {
         length: 3,
         child: Scaffold(
           appBar: TabBar(
+
             indicatorColor: Color(0xffE74C3C),
             labelStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             labelColor: Color(0xffE74C3C),
             unselectedLabelColor: Colors.black26,
             labelPadding: EdgeInsets.only(bottom: 0),
+          
             tabs: [
               Tab(
                 text: "Most Popular",

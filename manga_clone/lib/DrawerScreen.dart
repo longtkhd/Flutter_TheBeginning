@@ -42,6 +42,7 @@ class DrawerScreen extends StatelessWidget {
                         // ...
                         // Then close the drawer
                         Navigator.pop(context);
+                        
                       },
                     );
                   }),
